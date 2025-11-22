@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rasya Nazhimah</title>
+    
+    <!-- Bootstrap CSS 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-yellow: #FFD600;
+            --primary-dark: #2c2c2c;
+            --accent-orange: #FFC107;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        /* Header Navigation */
+        .header-nav {
+            padding: 30px 0 20px 0;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            background: var(--primary-yellow);
+            border-color: var(--primary-yellow);
+            color: var(--primary-dark);
+            transform: translateX(-5px);
+            box-shadow: 0 4px 15px rgba(255, 214, 0, 0.3);
+        }
+        
+        .back-button i {
+            font-size: 24px;
+        }
+        
+        /* CV Section */
+        .cv-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+        }
+        
+        /* PDF Viewer Card */
+        .pdf-viewer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .pdf-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+            background: #f5f5f5;
+        }
+        
+        .pdf-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pdf-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .pdf-fallback i {
+            font-size: 80px;
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+        }
+        
+        .pdf-fallback h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .pdf-fallback p {
+            color: var(--text-gray);
+            margin-bottom: 25px;
+        }
+        
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 35px;
+            background: var(--primary-yellow);
+            border: none;
+            border-radius: 12px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 214, 0, 0.3);
+        }
+        
+        .btn-download:hover {
+            background: var(--accent-orange);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+        }
+        
+        .btn-download i {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 0 30px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-left {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-quote {
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .footer-right {
+            display: flex;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background: var(--primary-yellow);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pdf-container {
+                height: 600px;
+            }
+            
+            .section-heading {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-right {
+                gap: 40px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .pdf-container {
+                height: 500px;
+            }
+            
+            .pdf-viewer-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.php#about" class="back-button" title="Back to Home">
+                <i class='bx bx-arrow-back'></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- CV Section -->
+    <div class="container">
+        <div class="cv-section">
+            <div class="section-title">MY CURRICULUM VITAE</div>
+            <h2 class="section-heading">Lihat CV Saya</h2>
+            
+            <!-- PDF Viewer Card -->
+            <div class="pdf-viewer-card">
+                <div class="pdf-container">
+                    <!-- PDF Embed dari file lokal -->
+                    <iframe 
+                        src="assets/file/cv-rasyah.pdf" 
+                        class="pdf-embed" 
+                        title="CV PDF Viewer"
+                    ></iframe>
+                </div>
+                
+                <!-- Download Button -->
+                <div class="text-center mt-4">
+                    <a href="assets/file/cv-rasyah.pdf" download="CV-Rasya-Nazhimah.pdf" class="btn-download">
+                        <i class='bx bx-download'></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Left -->
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">R</div>
+                        <div class="footer-logo-text">Rasya</div>
+                    </div>
+                    <p class="footer-quote">
+                        "Ketika kamu menginginkan sesuatu, segenap alam semesta 
+                        akan bersatu padu membantumu meraihnya." - Paulo Coelho
+                    </p>
+                    <!-- Footer Social -->
+                    <div class="footer-social">
+                        <a href="https://facebook.com/rasya" target="_blank">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a href="https://twitter.com/rasya" target="_blank">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+                        <a href="https://instagram.com/rasya" target="_blank">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://linkedin.com/in/rasya" target="_blank">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Footer Right -->
+                <div class="footer-right">
+                    <!-- Quick Links -->
+                    <div class="footer-links">
+                        <h6>Quick Links</h6>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Me</a></li>
+                            <li><a href="project.html">Project</a></li>
+                            <li><a href="contact.html">Contact Me</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Other Links -->
+                    <div class="footer-links">
+                        <h6>Other</h6>
+                        <ul>
+                            <li><a href="sharing.html">Sharing</a></li>
+                            <li><a href="cv.html">CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 <a href="index.php">Rasya</a> All Rights Reserved, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // PDF sudah langsung di-load dari file lokal
+        // Tidak perlu JavaScript untuk upload
+        console.log('CV PDF loaded from: assets/cv/cv-rasya.pdf');
+    </script>
+</body>
+</html>

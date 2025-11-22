@@ -1,0 +1,168 @@
+/* ========================================
+       NAVBAR - FIXED TO TOP
+       ======================================== */
+    .navbar-custom {
+        background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+        height: 56px;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1030 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .navbar-custom .navbar-brand {
+        color: var(--primary-yellow) !important;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+    
+    .navbar-custom .nav-link {
+        color: #fff !important;
+        transition: color 0.3s;
+    }
+    
+    .navbar-custom .nav-link:hover {
+        color: var(--primary-yellow) !important;
+    }
+    
+    .text-warning-custom {
+        color: var(--primary-yellow) !important;
+    }
+    
+    /* ========================================
+       HAMBURGER MENU (MOBILE)
+       ======================================== */
+    .navbar-toggler {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border: 2px solid var(--primary-yellow);
+        border-radius: 8px;
+        padding: 0;
+        background: transparent;
+        transition: all 0.3s ease;
+        z-index: 1050;
+    }
+    
+    .navbar-toggler:hover {
+        background: rgba(255, 214, 0, 0.15);
+        border-color: var(--accent-orange);
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(255, 214, 0, 0.25);
+    }
+    
+    .navbar-toggler-icon {
+        display: none !important;
+    }
+    
+    .navbar-toggler::before,
+    .navbar-toggler::after,
+    .navbar-toggler .line {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 2.5px;
+        background: var(--primary-yellow);
+        border-radius: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .navbar-toggler::before {
+        top: 11px;
+    }
+    
+    .navbar-toggler .line {
+        top: 19.5px;
+    }
+    
+    .navbar-toggler::after {
+        bottom: 11px;
+    }
+    
+    .navbar-toggler.active::before {
+        top: 19.5px;
+        transform: translateX(-50%) rotate(45deg);
+    }
+    
+    .navbar-toggler.active .line {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    
+    .navbar-toggler.active::after {
+        bottom: 19.5px;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+    
+    /* ========================================
+       SIDEBAR
+       ======================================== */
+    .sidebar {
+        position: fixed;
+        top: 56px;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        padding: 0;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        background-color: #fff;
+        width: var(--sidebar-width);
+    }
+    
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 56px);
+        padding-top: 1rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .sidebar .nav-link {
+        font-weight: 500;
+        color: var(--text-dark);
+        padding: 0.75rem 1rem;
+        border-left: 3px solid transparent;
+        transition: all 0.3s;
+    }
+    
+    .sidebar .nav-link:hover {
+        color: var(--accent-orange);
+        background-color: rgba(255, 214, 0, 0.1);
+        border-left-color: var(--primary-yellow);
+    }
+    
+    .sidebar .nav-link.active {
+        color: var(--text-dark);
+        background-color: rgba(255, 214, 0, 0.2);
+        border-left-color: var(--primary-yellow);
+        font-weight: 700;
+    }
+    
+    .sidebar .nav-link i {
+        margin-right: 0.5rem;
+        font-size: 1.25rem;
+        vertical-align: middle;
+    }
+    
+    .sidebar-heading {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        color: #6c757d;
+        font-weight: 700;
+        padding: 0.75rem 1rem;
+        margin-top: 1rem;
+    }

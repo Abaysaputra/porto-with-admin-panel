@@ -195,6 +195,24 @@ $certificates = getCertificates();
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(255, 214, 0, 0.4);
     }
+        
+    .btn-cancel-primary {
+        /* rubah background menjadi abu linear gradient*/
+        background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+        border: none;
+        color: var(--text-dark);
+        font-weight: 700;
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        margin-bottom: 24px;
+    }
+    
+    .btn-cancel-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 214, 0, 0.4);
+    }
     
     /* CERTIFICATE LIST */
     .cert-list-item {
@@ -596,8 +614,8 @@ $certificates = getCertificates();
             <!-- display_order default 0 -->
             <input type="hidden" name="display_order" value="0">
 
-            <div class="d-flex justify-content-end gap-2">
-                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            <div class="d-flex justify-content-end gap-2" style="gap: 10px;">
+                <button type="button" class="btn-cancel-primary me-2" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="btn-add-primary">
                     <i class='bx bx-save'></i> Save Certificate
                 </button>
